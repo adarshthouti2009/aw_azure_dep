@@ -50,8 +50,9 @@ This project focuses on building a data engineering pipeline using Azure service
     * Parameterization:
 
       * Use parameters instead of hardcoded file names to allow dynamic selection.
+        
       ```
-      Example: @item().p_file_url (source) and @item().p_file_name (sink)
+      @item().p_file_url (source) and @item().p_file_name (sink)
       ```
 4. Using Lookup & ForEach Activities for Batch Processing
 
@@ -99,11 +100,11 @@ This project focuses on building a data engineering pipeline using Azure service
 
 ### Transforming Data in Databricks Using PySpark
 
-  * Load Data from Silver Layer
+1. Load Data from Silver Layer
     ```
     df = spark.read.format('parquet').load('silver_layer_path')
     ```
-  * Transform Data
+2. Transform Data
 
     * Extracting Month from Date:
     ```
@@ -122,13 +123,14 @@ This project focuses on building a data engineering pipeline using Azure service
     df = df.withColumn("Total Sales", col('Quantity') * col('Price'))
     ```
 3. Store Transformed Data in Silver Layer
-```
-df.write.format('parquet').mode('append').save('silver_layer_path')
-```
+    ```
+    df.write.format('parquet').mode('append').save('silver_layer_path')
+    ```
 4. Big Data Analytics in Databricks
-```
-Visualize aggregated data using display(df.groupBy('Category').sum('Sales')).
-```
+   Visualize aggregated data using 
+    ```
+    display(df.groupBy('Category').sum('Sales')).
+    ```
 ## Phase 3: Analytics with Azure Synapse & Power BI
 
 ### Setting Up Synapse Analytics
