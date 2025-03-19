@@ -4,6 +4,10 @@
 
 This project focuses on building a data engineering pipeline using Azure services to process, transform, and analyze Adventure Works datasets. The architecture follows a three-layered data approach: Bronze (Raw Data), Silver (Processed Data), and Gold (Aggregated Data). The pipeline involves data ingestion from GitHub, transformation using Azure Databricks, and analytics using Synapse Analytics, with final reporting in Power BI.
 
+## Architecture Overview 
+
+![Project Architecture](Architecture.jpg)
+
 ## Phase 1: Data Ingestion (ETL Pipeline)
 
 ### Understanding the Data
